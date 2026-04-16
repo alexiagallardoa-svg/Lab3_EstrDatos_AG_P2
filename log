@@ -254,3 +254,14 @@ hashmap.c:55:14: error: ‘*nuevo.buckets’ may be used uninitialized [-Werror=
       |         ~~~~~^~~~~~~~~
 cc1: all warnings being treated as errors
 97fb250
+Thu Apr 16 08:48:00 PM UTC 2026: 
+ hashmap.c | 1 +
+ 1 file changed, 1 insertion(+)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘createMap’:
+hashmap.c:55:16: error: ‘nuevoB’ is a pointer to pointer; did you mean to dereference it before applying ‘->’ to it?
+   55 |         *nuevoB->key= NULL;
+      |                ^~
+      |          (*    )
+01ded86
