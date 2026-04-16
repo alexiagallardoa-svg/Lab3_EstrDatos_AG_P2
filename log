@@ -290,3 +290,8 @@ hashmap.c:55:16: error: ‘nuevoB’ is a pointer to pointer; did you mean to de
       |                ^~
       |          (*    )
 623091c
+Thu Apr 16 08:49:01 PM UTC 2026: 
+ hashmap.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+ tests:  0|0
+8f90102
