@@ -442,3 +442,9 @@ hashmap.c:57:14: error: ‘*nuevo.buckets’ may be used uninitialized [-Werror=
       |         ~~~~~^~~~~~~~~
 cc1: all warnings being treated as errors
 f3211f9
+Thu Apr 16 08:59:33 PM UTC 2026: 
+ hashmap.c | 11 ++++-------
+ 1 file changed, 4 insertions(+), 7 deletions(-)
+ tests:  5|4
+total_score: 20/60
+c43b415
