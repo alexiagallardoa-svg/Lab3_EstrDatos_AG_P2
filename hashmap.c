@@ -54,7 +54,7 @@ HashMap * createMap(long capacity) {
         //(*nuevoB) = NULL;
         //(*nuevoB)->key= NULL;
         Pair** nuevoB= (Pair**)createPair(NULL, NULL);
-        nuevo->buckets[i]= *nuevoB;
+        nuevo->buckets[i]= (*nuevoB);
     }
     return nuevo;
 }
