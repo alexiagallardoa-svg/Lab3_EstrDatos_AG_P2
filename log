@@ -331,3 +331,14 @@ hashmap.c:55:15: error: ‘nuevoB’ is a pointer to pointer; did you mean to de
       |               ^~
       |         (*    )
 6dceaf7
+Thu Apr 16 08:52:49 PM UTC 2026: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘createMap’:
+hashmap.c:55:16: error: ‘nuevoB’ is a pointer to pointer; did you mean to dereference it before applying ‘->’ to it?
+   55 |         *nuevoB->key= NULL;
+      |                ^~
+      |          (*    )
+9cb5413
