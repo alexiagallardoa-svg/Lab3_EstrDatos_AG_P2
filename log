@@ -222,3 +222,14 @@ hashmap.c:55:14: error: ‘*nuevo.buckets’ may be used uninitialized [-Werror=
       |         ~~~~~^~~~~~~~~
 cc1: all warnings being treated as errors
 61a0756
+Thu Apr 16 08:43:32 PM UTC 2026: 
+ hashmap.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘createMap’:
+hashmap.c:55:14: error: ‘*nuevo.buckets’ may be used uninitialized [-Werror=maybe-uninitialized]
+   55 |         nuevo->buckets[i]= *nuevoB;
+      |         ~~~~~^~~~~~~~~
+cc1: all warnings being treated as errors
+1a52824
