@@ -358,3 +358,13 @@ hashmap.c:56:14: error: ‘*nuevo.buckets’ may be used uninitialized [-Werror=
       |         ~~~~~^~~~~~~~~
 cc1: all warnings being treated as errors
 e62fefd
+Thu Apr 16 08:54:38 PM UTC 2026: 
+ hashmap.c | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘createMap’:
+hashmap.c:56:24: error: initialization of ‘Pair **’ from incompatible pointer type ‘Pair *’ [-Wincompatible-pointer-types]
+   56 |         Pair** nuevoB= createPair(NULL, 0);
+      |                        ^~~~~~~~~~
+2f0ac2b

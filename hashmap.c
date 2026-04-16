@@ -50,9 +50,10 @@ HashMap * createMap(long capacity) {
     nuevo->capacity= capacity;
     nuevo->size= 0;
     for (long i = 0 ; i < capacity ; i++){
-        Pair** nuevoB = malloc(sizeof(Pair*));
-        (*nuevoB) = NULL;
+        //Pair** nuevoB = malloc(sizeof(Pair*));
+        //(*nuevoB) = NULL;
         //(*nuevoB)->key= NULL;
+        Pair** nuevoB= createPair(NULL, 0);
         nuevo->buckets[i]= (*nuevoB);
     }
     return nuevo;
