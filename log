@@ -233,3 +233,13 @@ hashmap.c:55:14: error: ‘*nuevo.buckets’ may be used uninitialized [-Werror=
       |         ~~~~~^~~~~~~~~
 cc1: all warnings being treated as errors
 1a52824
+Thu Apr 16 08:43:55 PM UTC 2026: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘createMap’:
+hashmap.c:55:26: error: assignment to ‘Pair *’ from incompatible pointer type ‘Pair ***’ [-Wincompatible-pointer-types]
+   55 |         nuevo->buckets[i]= &nuevoB;
+      |                          ^
+43df5b2
