@@ -191,3 +191,14 @@ Thu Apr 16 08:38:10 PM UTC 2026:
  1 file changed, 1 insertion(+), 1 deletion(-)
  tests:  0|0
 f1002b0
+Thu Apr 16 08:38:50 PM UTC 2026: 
+ hashmap.c | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘createMap’:
+hashmap.c:53:14: error: ‘*nuevo.buckets’ may be used uninitialized [-Werror=maybe-uninitialized]
+   53 |         nuevo->buckets[i]= NULL;
+      |         ~~~~~^~~~~~~~~
+cc1: all warnings being treated as errors
+907469b
