@@ -88,3 +88,44 @@ Thu Apr 16 08:23:59 PM UTC 2026:
  tests:  4|5
 total_score: 15/60
 c224bc0
+Thu Apr 16 08:25:25 PM UTC 2026: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘insertMap’:
+hashmap.c:64:9: error: suggest parentheses around assignment used as truth value [-Werror=parentheses]
+   64 |         pos = (pos+1) % (map->capacity);
+      |         ^~~
+hashmap.c:64:40: error: expected ‘)’ before ‘;’ token
+   64 |         pos = (pos+1) % (map->capacity);
+      |                                        ^
+      |                                        )
+hashmap.c:63:11: note: to match this ‘(’
+   63 |     while (//map->buckets[pos] != NULL) ||// map->buckets[pos]->key != NULL){
+      |           ^
+hashmap.c:65:5: error: expected expression before ‘}’ token
+   65 |     }
+      |     ^
+hashmap.c: At top level:
+hashmap.c:66:27: error: ‘key’ undeclared here (not in a function); did you mean ‘key_t’?
+   66 |     Pair* par= createPair(key, value);
+      |                           ^~~
+      |                           key_t
+hashmap.c:66:32: error: ‘value’ undeclared here (not in a function)
+   66 |     Pair* par= createPair(key, value);
+      |                                ^~~~~
+hashmap.c:67:8: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘->’ token
+   67 |     map->buckets[pos] = par;
+      |        ^~
+hashmap.c:68:8: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘->’ token
+   68 |     map->current = pos;
+      |        ^~
+hashmap.c:69:8: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘->’ token
+   69 |     map->size ++;
+      |        ^~
+hashmap.c:70:1: error: expected identifier or ‘(’ before ‘}’ token
+   70 | }
+      | ^
+cc1: all warnings being treated as errors
+c9dd8fd
