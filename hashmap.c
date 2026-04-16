@@ -60,6 +60,7 @@ HashMap * createMap(long capacity) {
 
 void insertMap(HashMap * map, char * key, void * value) {
     int pos = hash(key, map->capacity);
+    if (map->capacity < 1) return NULL;
     if (map->buckets[pos] != NULL || map->buckets[pos]->key != NULL){
         pos = (pos+1) % map->capacity;
     }

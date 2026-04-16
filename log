@@ -46,3 +46,16 @@ Thu Apr 16 08:16:17 PM UTC 2026:
  1 file changed, 1 insertion(+)
  tests:  0|0
 9d3a39a
+Thu Apr 16 08:18:09 PM UTC 2026: 
+ hashmap.c | 1 +
+ 1 file changed, 1 insertion(+)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘insertMap’:
+hashmap.c:63:35: error: ‘return’ with a value, in function returning void [-Wreturn-mismatch]
+   63 |     if (map->capacity < 1) return NULL;
+      |                                   ^~~~
+hashmap.c:61:6: note: declared here
+   61 | void insertMap(HashMap * map, char * key, void * value) {
+      |      ^~~~~~~~~
+1963907
