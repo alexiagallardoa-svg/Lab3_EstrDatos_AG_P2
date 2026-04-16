@@ -368,3 +368,13 @@ hashmap.c:56:24: error: initialization of ‘Pair **’ from incompatible pointe
    56 |         Pair** nuevoB= createPair(NULL, 0);
       |                        ^~~~~~~~~~
 2f0ac2b
+Thu Apr 16 08:54:46 PM UTC 2026: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘createMap’:
+hashmap.c:57:28: error: incompatible types when assigning to type ‘Pair *’ from type ‘Pair’
+   57 |         nuevo->buckets[i]= (*nuevoB);
+      |                            ^
+ed0d572
