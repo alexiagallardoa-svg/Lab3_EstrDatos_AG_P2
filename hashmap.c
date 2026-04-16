@@ -45,7 +45,7 @@ int is_equal(void* key1, void* key2){
 // Inicialice el índice current a -1.
 
 HashMap * createMap(long capacity) {
-
+    
     return NULL;
 }
 
@@ -65,6 +65,7 @@ void insertMap(HashMap * map, char * key, void * value) {
     }
     Pair* par= createPair(key, value);
     map->buckets[pos] = par;
+    map->current = pos;
 }
 
 // 3. Implemente la función Pair * searchMap(HashMap * map, char * key), la cual retorna el Pair asociado a la clave ingresada. 
