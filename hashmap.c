@@ -47,7 +47,7 @@ int is_equal(void* key1, void* key2){
 HashMap * createMap(long capacity) {
     HashMap* nuevo = malloc(sizeof(HashMap));
     nuevo->current= -1;
-    nuevo->capacity= 0;
+    nuevo->capacity= capacity;
     nuevo->size= 0;
     nuevo->buckets= NULL;
     return nuevo;
