@@ -378,3 +378,13 @@ hashmap.c:57:28: error: incompatible types when assigning to type ‘Pair *’ f
    57 |         nuevo->buckets[i]= (*nuevoB);
       |                            ^
 ed0d572
+Thu Apr 16 08:54:54 PM UTC 2026: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘createMap’:
+hashmap.c:57:28: error: incompatible types when assigning to type ‘Pair *’ from type ‘Pair’
+   57 |         nuevo->buckets[i]= *nuevoB;
+      |                            ^
+25a5de6
