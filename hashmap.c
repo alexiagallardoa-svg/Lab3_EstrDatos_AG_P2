@@ -53,7 +53,7 @@ HashMap * createMap(long capacity) {
         //Pair** nuevoB = malloc(sizeof(Pair*));
         //(*nuevoB) = NULL;
         //(*nuevoB)->key= NULL;
-        Pair** nuevoB= (Pair**)createPair(NULL, 0);
+        Pair** nuevoB= (Pair**)createPair(NULL, NULL);
         nuevo->buckets[i]= *nuevoB;
     }
     return nuevo;
