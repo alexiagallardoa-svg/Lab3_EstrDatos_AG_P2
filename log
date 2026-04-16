@@ -134,3 +134,28 @@ Thu Apr 16 08:25:48 PM UTC 2026:
  1 file changed, 2 insertions(+), 1 deletion(-)
  tests:  0|0
 e0b8f98
+Thu Apr 16 08:27:01 PM UTC 2026: 
+ hashmap.c | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘insertMap’:
+hashmap.c:63:39: error: statement with no effect [-Werror=unused-value]
+   63 |     while (map->buckets[pos] != NULL) && map->buckets[pos]->key != NULL){
+      |                                       ^~~~~~
+hashmap.c:63:45: error: expected ‘;’ before ‘->’ token
+   63 |     while (map->buckets[pos] != NULL) && map->buckets[pos]->key != NULL){
+      |                                             ^~
+      |                                             ;
+hashmap.c:63:5: error: this ‘while’ clause does not guard... [-Werror=misleading-indentation]
+   63 |     while (map->buckets[pos] != NULL) && map->buckets[pos]->key != NULL){
+      |     ^~~~~
+hashmap.c:63:72: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘while’
+   63 |     while (map->buckets[pos] != NULL) && map->buckets[pos]->key != NULL){
+      |                                                                        ^
+hashmap.c:63:72: error: expected statement before ‘)’ token
+hashmap.c:63:5: error: label ‘map’ used but not defined
+   63 |     while (map->buckets[pos] != NULL) && map->buckets[pos]->key != NULL){
+      |     ^~~~~
+cc1: all warnings being treated as errors
+a25fc51
