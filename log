@@ -295,3 +295,18 @@ Thu Apr 16 08:49:01 PM UTC 2026:
  1 file changed, 3 insertions(+), 3 deletions(-)
  tests:  0|0
 8f90102
+Thu Apr 16 08:51:04 PM UTC 2026: 
+ hashmap.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘createMap’:
+hashmap.c:55:18: error: ‘*nuevoB’ is a pointer; did you mean to use ‘->’?
+   55 |         (*nuevoB).key= NULL;
+      |                  ^
+      |                  ->
+hashmap.c:56:14: error: ‘nuevo’ is a pointer; did you mean to use ‘->’?
+   56 |         nuevo.buckets[i]= (*nuevoB);
+      |              ^
+      |              ->
+a84d674
