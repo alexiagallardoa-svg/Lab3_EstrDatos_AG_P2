@@ -409,3 +409,14 @@ hashmap.c:56:24: error: initialization of ‘Pair **’ from incompatible pointe
    56 |         Pair** nuevoB= createPair(NULL, 0);
       |                        ^~~~~~~~~~
 d09d25f
+Thu Apr 16 08:55:30 PM UTC 2026: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘createMap’:
+hashmap.c:57:14: error: ‘*nuevo.buckets’ may be used uninitialized [-Werror=maybe-uninitialized]
+   57 |         nuevo->buckets[i]= *nuevoB;
+      |         ~~~~~^~~~~~~~~
+cc1: all warnings being treated as errors
+6af39fd
