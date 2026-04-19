@@ -131,7 +131,7 @@ Pair * firstMap(HashMap * map) {
 
 Pair * nextMap(HashMap * map) {
     //si map es nulo, el current es -1, el size es 1 (porque solo hay un elemento valido(current)), se devuelve nulo 
-    if (map== NULL || map->current== -1 || map->size== 1 || (map->current +1) >= map->capacity) return NULL;
+    if (map== NULL || map->current== -1 || map->size== 1 || (map->current ) >= map->capacity) return NULL;
     //se obtiene posicion de current y su par
     long pos= map->current;
     //Pair* actual = map->buckets[pos];
