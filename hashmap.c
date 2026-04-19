@@ -118,7 +118,7 @@ void eraseMap(HashMap * map,  char * key) {
 
 Pair * firstMap(HashMap * map) {
     Pair* par = map->buckets[0];
-    return pair;
+    return par;
 }
 
 Pair * nextMap(HashMap * map) {
