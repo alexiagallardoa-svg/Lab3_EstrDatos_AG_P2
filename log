@@ -501,3 +501,8 @@ hashmap.c:107:15: error: initialization of ‘int’ from ‘Pair *’ makes int
   107 |     int pos = searchMap(map, key);
       |               ^~~~~~~~~
 6b6f437
+Sun Apr 19 08:50:23 PM UTC 2026: 
+ hashmap.c | 5 ++---
+ 1 file changed, 2 insertions(+), 3 deletions(-)
+ tests:  0|0
+b23acf2

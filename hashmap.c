@@ -103,9 +103,8 @@ Pair * searchMap(HashMap * map,  char * key) {
 // Recuerde actualizar la variable size.
 
 void eraseMap(HashMap * map,  char * key) {  
-    //se busca la posicion de la clave a eliminar
-    int pos = searchMap(map, key);
-    Pair* par= map->buckets[pos];
+    //se busca el par a eliminar con la clave y la funcion creada anteriormente
+    Pair* par= searchMap(map, key);
     par->key= NULL;
     map->size--;
 }
