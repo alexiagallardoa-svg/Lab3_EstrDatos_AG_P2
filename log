@@ -518,3 +518,22 @@ Sun Apr 19 09:09:46 PM UTC 2026:
  tests:  12|1
 total_score: 50/60
 157173a
+Sun Apr 19 09:24:44 PM UTC 2026: 
+ hashmap.c | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘firstMap’:
+hashmap.c:121:12: error: ‘pair’ undeclared (first use in this function); did you mean ‘Pair’?
+  121 |     return pair;
+      |            ^~~~
+      |            Pair
+hashmap.c:121:12: note: each undeclared identifier is reported only once for each function it appears in
+hashmap.c:120:11: error: unused variable ‘par’ [-Werror=unused-variable]
+  120 |     Pair* par = map->buckets[0];
+      |           ^~~
+hashmap.c:122:1: error: control reaches end of non-void function [-Werror=return-type]
+  122 | }
+      | ^
+cc1: all warnings being treated as errors
+0cf277f

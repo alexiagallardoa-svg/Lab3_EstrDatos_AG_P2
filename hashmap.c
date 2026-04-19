@@ -113,11 +113,12 @@ void eraseMap(HashMap * map,  char * key) {
 
 // 5. Implemente las funciones para recorrer la estructura: Pair * firstMap(HashMap * map) retorna el primer Pair válido del arreglo buckets. 
 // Pair * nextMap(HashMap * map) retorna el siguiente Pair del arreglo buckets a partir índice current. 
-// Recuerde actualizar el índice.
+// Recuerde actualizar el índice. 
+//Pair **buckets | long size, capacity, current | char* key void* value | is_equal(void* key1, void* key2)
 
 Pair * firstMap(HashMap * map) {
-
-    return NULL;
+    Pair* par = map->buckets[0];
+    return pair;
 }
 
 Pair * nextMap(HashMap * map) {
