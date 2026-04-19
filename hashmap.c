@@ -104,7 +104,9 @@ Pair * searchMap(HashMap * map,  char * key) {
 
 void eraseMap(HashMap * map,  char * key) {  
     //se busca el par a eliminar con la clave y la funcion creada anteriormente
+    if (map==NULL) return;
     Pair* par= searchMap(map, key);
+    if (par== NULL) return;
     par->key= NULL;
     map->size--;
 }
