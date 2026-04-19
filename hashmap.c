@@ -130,11 +130,10 @@ Pair * firstMap(HashMap * map) {
 }
 
 Pair * nextMap(HashMap * map) {
-    //si map es nulo, el current es -1, el size es 1 (porque solo hay un elemento valido(current)), o el current se encuentra al final se devuelve nulo 
+    //si map es nulo, el current es -1, el size es 1 (porque solo hay un elemento valido(current)), o el current se encuentra al final, se devuelve nulo 
     if (map== NULL || map->current== -1 || map->size== 1 || map->current >= (map->capacity-1)) return NULL;
-    //se obtiene posicion de current y su par
-    long pos= map->current;
-    //Pair* actual = map->buckets[pos];
+    //se obtiene posicion siguiente a current
+    long pos= map->current+1;
     //si el par en la posicion es nulo Ó la clave lo es, significa que no hay un valor valido guardado, por lo que se avanza
     while (map->buckets[pos] == NULL || map->buckets[pos]->key == NULL){
         pos = pos+1;
