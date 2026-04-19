@@ -90,7 +90,7 @@ Pair * searchMap(HashMap * map,  char * key) {
         if (is_equal(map->buckets[pos]->key, key) == 1) break;
         //si no tienen la misma clave, se usa la resolucion de colisiones usada en insert (2)
         pos = (pos+1) % (map->capacity);
-        //mientras que el par y la clave NO sean nulos se avanza (de serlo significa que no se encontro el par con esa clave)
+        //mientras que el par y la clave NO sean nulos, se avanza (de serlo significa que no se encontro el par con esa clave)
     } while (map->buckets[pos] != NULL && map->buckets[pos]->key != NULL);
     //si el par encontrado o su clave es nulo, entonces no existe un par con esa clave y se retorna nulo
     if (map->buckets[pos] == NULL || map->buckets[pos]->key == NULL) return NULL;
@@ -119,7 +119,6 @@ void eraseMap(HashMap * map,  char * key) {
 // 5. Implemente las funciones para recorrer la estructura: Pair * firstMap(HashMap * map) retorna el primer Pair válido del arreglo buckets. 
 // Pair * nextMap(HashMap * map) retorna el siguiente Pair del arreglo buckets a partir índice current. 
 // Recuerde actualizar el índice. 
-//Pair **buckets | long size, capacity, current | char* key void* value | is_equal(void* key1, void* key2)
 
 Pair * firstMap(HashMap * map) {
     //si el mapa no existe o no hay elementos guardados, se retorna nulo
