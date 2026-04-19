@@ -491,3 +491,13 @@ Sun Apr 19 08:40:24 PM UTC 2026:
  tests:  8|3
 total_score: 30/60
 77149c5
+Sun Apr 19 08:49:39 PM UTC 2026: 
+ hashmap.c | 7 +++++--
+ 1 file changed, 5 insertions(+), 2 deletions(-)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘eraseMap’:
+hashmap.c:107:15: error: initialization of ‘int’ from ‘Pair *’ makes integer from pointer without a cast [-Wint-conversion]
+  107 |     int pos = searchMap(map, key);
+      |               ^~~~~~~~~
+6b6f437
