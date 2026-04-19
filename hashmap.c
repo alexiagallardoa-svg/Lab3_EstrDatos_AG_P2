@@ -92,6 +92,7 @@ Pair * searchMap(HashMap * map,  char * key) {
         pos = (pos+1) % (map->capacity);
         //mientras que el par y la clave NO sean nulos se avanza (de serlo significa que no se encontro el par con esa clave)
     } while (map->buckets[pos] != NULL && map->buckets[pos]->key != NULL);
+    //si el par encontrado o su clave es nulo, entonces no existe un par con esa clave y se retorna nulo
     if (map->buckets[pos] == NULL || map->buckets[pos]->key == NULL) return NULL;
     Pair* info = map->buckets[pos];
     map->current = pos;
