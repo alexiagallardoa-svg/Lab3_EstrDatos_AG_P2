@@ -119,6 +119,7 @@ void eraseMap(HashMap * map,  char * key) {
 Pair * firstMap(HashMap * map) {
     //encontrar primer par valido en arreglo  
     int pos = 0;
+    //si el elemento en la posicion es nulo O la clave lo es, significa que no hay un valor valido guardado
     while (map->buckets[pos] == NULL || map->buckets[pos]->key == NULL){
         pos = pos+1;
     }
@@ -129,10 +130,18 @@ Pair * firstMap(HashMap * map) {
 }
 
 Pair * nextMap(HashMap * map) {
-
-    return NULL;
+    //si map es nulo, el current es -1, el size es 1 (porque solo hay un elemento valido), se devuelve nulo 
+    if (map== NULL || map->current== -1 || map->size== 1) return NULL;
+    //se obtiene posicion de current y su par
+    long pos= map->current;
+    Pair* actual = map->buckets[pos];
+    //si el elemento en la posicion es nulo O la clave lo es, significa que no hay un valor valido guardado
+    while (actual == NULL || actual->key == NULL){
+        pos = pos+1;
+    }
+    //actual= 
+    return actual;
 }
-
 
 // 6.- Implemente la función void enlarge(HashMap * map). Esta función agranda la capacidad del arreglo buckets y reubica todos sus elementos. 
 // Para hacerlo es recomendable mantener referenciado el arreglo actual/antiguo de la tabla con un puntero auxiliar. 
