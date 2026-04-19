@@ -141,7 +141,7 @@ Pair * nextMap(HashMap * map) {
         //si la posicion es mayor o igual a la capacidad, entonces no se puede seguir buscando y por lo tanto no hay un next
         if (pos >= map->capacity) return NULL;
     }
-    return actual;
+    return map->buckets[pos];
 }
 
 // 6.- Implemente la función void enlarge(HashMap * map). Esta función agranda la capacidad del arreglo buckets y reubica todos sus elementos. 
