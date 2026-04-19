@@ -91,8 +91,9 @@ Pair * searchMap(HashMap * map,  char * key) {
         //si no tienen la misma clave, se usa la resolucion de colisiones usada en (2)
         pos = (pos+1) % (map->capacity);
     } while (map->buckets[pos] != NULL && map->buckets[pos]->key != NULL);
-    if (pos == NULL) return NULL;
+    //si la posicion encontrada luego del ciclo es NULL, entonces no hay un elemento que tenga el key buscado 
     Pair* info = map->buckets[pos];
+    //if (pos == NULL) return NULL;
     return info;
 }
 
