@@ -46,10 +46,9 @@ int is_equal(void* key1, void* key2){
 
 HashMap * createMap(long capacity) {
     HashMap* nuevo = malloc(sizeof(HashMap));
-    if (nuevo == NULL) exit(EXIT_FAILURE);
+    //if (nuevo == NULL) exit(EXIT_FAILURE);
     nuevo->buckets = (Pair**) calloc(capacity, sizeof(Pair*));
-    if (nuevo->buckets == NULL) exit(EXIT_FAILURE);
-    
+    //if (nuevo->buckets == NULL) exit(EXIT_FAILURE);
     nuevo->current= -1;
     nuevo->capacity= capacity;
     nuevo->size= 0;
@@ -84,12 +83,16 @@ void insertMap(HashMap * map, char * key, void * value) {
 // Recuerde actualizar el índice current a la posición encontrada. Recuerde que el arreglo es circular.
 
 Pair * searchMap(HashMap * map,  char * key) {   
+    //si el mapa no existe, se retorna nulo
     if (map==NULL) return NULL;
+    //se encuentra primera posicion asignada al querer insertar
     int pos = hash(key, map->capacity);
     do {
+        //si la clave de la posicion calculada es igual a la clave buscada, se sale del ciclo
         if (is_equal(map->buckets[pos]->key, key) == 1) break;
-        //si no tienen la misma clave, se usa la resolucion de colisiones usada en (2)
+        //si no tienen la misma clave, se usa la resolucion de colisiones usada en insert (2)
         pos = (pos+1) % (map->capacity);
+        //mientras que el par y la clave NO sean nulos (de serlo significa que no se encontro el par con esa clave)
     } while (map->buckets[pos] != NULL && map->buckets[pos]->key != NULL);
     Pair* info = map->buckets[pos];
     map->current = pos;
@@ -119,25 +122,25 @@ void eraseMap(HashMap * map,  char * key) {
 Pair * firstMap(HashMap * map) {
     //encontrar primer par valido en arreglo  
     int pos = 0;
-    //si el elemento en la posicion es nulo O la clave lo es, significa que no hay un valor valido guardado
+    //si el par en la posicion es nulo Ó la clave lo es, significa que no hay un valor valido guardado, por lo que se avanza
     while (map->buckets[pos] == NULL || map->buckets[pos]->key == NULL){
         pos = pos+1;
     }
-    //ahora que se tiene el elemento, se retorna el par 
+    //ahora que se tiene una posicion valida, se retorna el par 
     Pair* par = map->buckets[pos];
     map->current= pos;
     return par;
 }
 
 Pair * nextMap(HashMap * map) {
-    //si map no existe, no hay current, el size es menor a 2 (solo hay 1 elemento valido(current) o no hay elementos guardados (0)), o el current se encuentra al final, se devuelve nulo 
+    //si map no existe, no hay current, el size es menor a 2 (solo hay 1 elemento valido(current) o no hay elementos guardados (0)) o el current se encuentra al final, se devuelve nulo 
     if (map== NULL || map->current== -1 || map->size< 2 || map->current >= (map->capacity-1)) return NULL;
     //se obtiene posicion siguiente a current
     long pos= map->current+1;
     //si el par en la posicion es nulo Ó la clave lo es, significa que no hay un valor valido guardado, por lo que se avanza
     while (map->buckets[pos] == NULL || map->buckets[pos]->key == NULL){
         pos = pos+1;
-        //si la posicion es mayor o igual a la capacidad, entonces no se puede seguir buscando y por lo tanto no hay un next
+        //si la posicion siguiente es mayor o igual a la capacidad, entonces no se puede seguir buscando y por lo tanto no hay un next
         if (pos >= map->capacity) return NULL;
     }
     map->current= pos;
@@ -170,8 +173,3 @@ void enlarge(HashMap * map) {
     }
     free(antiguoBuck);
 }
-
-
-
-
-
