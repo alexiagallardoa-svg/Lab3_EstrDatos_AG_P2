@@ -139,8 +139,18 @@ Pair * nextMap(HashMap * map) {
 
 void enlarge(HashMap * map) {
     enlarge_called = 1; //no borrar (testing purposes)
-
-
+    Pair** antiguoBuck= map->buckets;
+    long antiguaCap= map->capacity;
+    map->capacity= 2* antiguaCap;
+    map->buckets= (Pair**) calloc(map->capacity, sizeof(Pair*));
+    map->size= 0;
+    for (long i = 0 ; i < antiguaCap ; i++){
+        if (antiguoBuck[i] != NULL && antiguoBuck[i]->key != NULL){
+            insertMap(map, antiguoBuck[i]->key, antiguoBuck[i]->value);
+            free(antiguoBuck[i]);
+        }
+    }
+    free(antiguoBuck);
 }
 
 
