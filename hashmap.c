@@ -117,11 +117,14 @@ void eraseMap(HashMap * map,  char * key) {
 //Pair **buckets | long size, capacity, current | char* key void* value | is_equal(void* key1, void* key2)
 
 Pair * firstMap(HashMap * map) {
-    //si no existe
-    //if (map->buckets[0] == NULL && map->buckets[0]->key == NULL){
-    //si existe
-    Pair* par = map->buckets[0];
-    map->current= 0;
+    //encontrar primer par valido en arreglo  
+    int pos = 0;
+    while (map->buckets[pos] == NULL && map->buckets[pos]->key == NULL){
+        pos = (pos+1) % (map->capacity);
+    }
+    //ahora que se tiene el elemento, se retorna el par 
+    Pair* par = map->buckets[pos];
+    map->current= pos;
     return par;
 }
 
