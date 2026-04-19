@@ -602,3 +602,18 @@ Sun Apr 19 10:13:14 PM UTC 2026:
  tests:  14|1
 total_score: 50/60
 75d1724
+Sun Apr 19 10:19:06 PM UTC 2026: 
+ hashmap.c | 11 +++++------
+ 1 file changed, 5 insertions(+), 6 deletions(-)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘nextMap’:
+hashmap.c:144:12: error: ‘actual’ undeclared (first use in this function)
+  144 |     return actual;
+      |            ^~~~~~
+hashmap.c:144:12: note: each undeclared identifier is reported only once for each function it appears in
+hashmap.c:145:1: error: control reaches end of non-void function [-Werror=return-type]
+  145 | }
+      | ^
+cc1: all warnings being treated as errors
+603ad00
