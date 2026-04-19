@@ -119,7 +119,7 @@ void eraseMap(HashMap * map,  char * key) {
 Pair * firstMap(HashMap * map) {
     //encontrar primer par valido en arreglo  
     int pos = 0;
-    while (map->buckets[pos] == NULL && map->buckets[pos]->key == NULL){
+    while (map->buckets[pos] == NULL || map->buckets[pos]->key == NULL){
         pos = pos+1;
     }
     //ahora que se tiene el elemento, se retorna el par 
