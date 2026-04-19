@@ -140,7 +140,7 @@ Pair * nextMap(HashMap * map) {
     while (actual == NULL || actual->key == NULL){
         pos = pos+1;
         //si la posicion es mayor o igual a la capacidad, entonces no se puede seguir buscando y por lo tanto no hay un next
-        if (pos >= capacity) return NULL;
+        if (pos >= map->capacity) return NULL;
     }
     return actual;
 }
