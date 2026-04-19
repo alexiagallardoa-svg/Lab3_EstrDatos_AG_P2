@@ -140,6 +140,7 @@ Pair * nextMap(HashMap * map) {
         //si la posicion es mayor o igual a la capacidad, entonces no se puede seguir buscando y por lo tanto no hay un next
         if (pos >= map->capacity) return NULL;
     }
+    map->current= pos;
     return map->buckets[pos];
 }
 
