@@ -118,6 +118,8 @@ void eraseMap(HashMap * map,  char * key) {
 //Pair **buckets | long size, capacity, current | char* key void* value | is_equal(void* key1, void* key2)
 
 Pair * firstMap(HashMap * map) {
+    //si el mapa no existe o no hay elementos guardados, se retorna nulo
+    if (map== NULL || map->size== 0) return NULL;
     //encontrar primer par valido en arreglo  
     int pos = 0;
     //si el par en la posicion es nulo Ó la clave lo es, significa que no hay un valor valido guardado, por lo que se avanza
@@ -131,7 +133,7 @@ Pair * firstMap(HashMap * map) {
 }
 
 Pair * nextMap(HashMap * map) {
-    //si map no existe, no hay current, el size es menor a 2 (solo hay 1 elemento valido(current) o no hay elementos guardados (0)) o el current se encuentra al final, se devuelve nulo 
+    //si map no existe, no hay current, el size es menor a 2 (solo hay 1 elemento valido(current) o no hay elementos guardados (0)) o el current se encuentra al final, se retorna nulo 
     if (map== NULL || map->current== -1 || map->size< 2 || map->current >= (map->capacity-1)) return NULL;
     //se obtiene posicion siguiente a current
     long pos= map->current+1;
