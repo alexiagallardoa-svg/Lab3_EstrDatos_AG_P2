@@ -117,7 +117,11 @@ void eraseMap(HashMap * map,  char * key) {
 //Pair **buckets | long size, capacity, current | char* key void* value | is_equal(void* key1, void* key2)
 
 Pair * firstMap(HashMap * map) {
+    //si no existe
+    //if (map->buckets[0] == NULL && map->buckets[0]->key == NULL){
+    //si existe
     Pair* par = map->buckets[0];
+    map->current= 0;
     return par;
 }
 
