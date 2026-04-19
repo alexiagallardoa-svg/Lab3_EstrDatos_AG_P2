@@ -81,8 +81,8 @@ void insertMap(HashMap * map, char * key, void * value) {
 // Recuerde actualizar el índice current a la posición encontrada. Recuerde que el arreglo es circular.
 
 Pair * searchMap(HashMap * map,  char * key) {   
-    //si el mapa no existe, se retorna nulo
-    if (map==NULL) return NULL;
+    //si el mapa no existe o no hay elementos guardados, se retorna nulo
+    if (map==NULL || map->size== 0) return NULL;
     //se encuentra primera posicion asignada al querer insertar
     int pos = hash(key, map->capacity);
     do {
@@ -90,8 +90,9 @@ Pair * searchMap(HashMap * map,  char * key) {
         if (is_equal(map->buckets[pos]->key, key) == 1) break;
         //si no tienen la misma clave, se usa la resolucion de colisiones usada en insert (2)
         pos = (pos+1) % (map->capacity);
-        //mientras que el par y la clave NO sean nulos (de serlo significa que no se encontro el par con esa clave)
+        //mientras que el par y la clave NO sean nulos se avanza (de serlo significa que no se encontro el par con esa clave)
     } while (map->buckets[pos] != NULL && map->buckets[pos]->key != NULL);
+    if (map->buckets[pos] == NULL || map->buckets[pos]->key == NULL) return NULL;
     Pair* info = map->buckets[pos];
     map->current = pos;
     return info;
@@ -104,9 +105,11 @@ Pair * searchMap(HashMap * map,  char * key) {
 // Recuerde actualizar la variable size.
 
 void eraseMap(HashMap * map,  char * key) {  
+    //si el mapa no existe o no hay elementos guardados, se retorna 
+    if (map==NULL || map->size== 0) return;
     //se busca el par a eliminar con la clave y la funcion creada anteriormente
-    if (map==NULL) return;
     Pair* par= searchMap(map, key);
+    //si el par es nulo, significa que no existe un par con la clave buscada, por lo que se retorna
     if (par== NULL) return;
     par->key= NULL;
     map->size--;
