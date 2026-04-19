@@ -87,7 +87,8 @@ Pair * searchMap(HashMap * map,  char * key) {
     if (map==NULL) return NULL;
     int pos = hash(key, map->capacity);
     do {
-        if (map->buckets[pos]->key == key) break;
+        if (is_equal(map->buckets[pos]->key, key) == 1) break;
+        //if (map->buckets[pos]->key == key) break;
         //si no tienen la misma clave, se usa la resolucion de colisiones usada en (2)
         pos = (pos+1) % (map->capacity);
     } while (map->buckets[pos] != NULL && map->buckets[pos]->key != NULL);
