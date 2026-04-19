@@ -119,9 +119,13 @@ void eraseMap(HashMap * map,  char * key) {
 Pair * firstMap(HashMap * map) {
     //encontrar primer par valido en arreglo  
     int pos = 0;
-    while (map->buckets[pos] == NULL && map->buckets[pos]->key == NULL){
+    do {
+        //si no tienen la misma clave, se usa la resolucion de colisiones usada en (2)
         pos = (pos+1) % (map->capacity);
-    }
+    } while (map->buckets[pos] != NULL && map->buckets[pos]->key != NULL);
+    /*while (map->buckets[pos] == NULL && map->buckets[pos]->key == NULL){
+        pos = (pos+1) % (map->capacity);
+    }*/
     //ahora que se tiene el elemento, se retorna el par 
     Pair* par = map->buckets[pos];
     map->current= pos;
